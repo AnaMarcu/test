@@ -1,0 +1,13 @@
+<footer class="footer">
+    <div class="container-fluid">
+        <p class="text-left">
+            {{ site.data.ui-text.footer.copyright.text }} {{ 'now' | date: "%Y" }}
+            <a href="{{ site.data.ui-text.footer.copyright.url }}" target="_blank">{{ site.data.ui-text.footer.copyright.entity }}</a><br>
+            <small>{{ site.data.ui-text.footer.content_license.prefix }}
+                <a href="{{ site.data.ui-text.footer.content_license.url }}" target="_blank">{{ site.data.ui-text.footer.content_license.name }}</a>.
+                {{ site.data.ui-text.footer.code_license.prefix }}
+                <a href="{{ site.data.ui-text.footer.code_license.url }}" target="_blank">{{ site.data.ui-text.footer.code_license.name }}</a>.
+            </small>
+        </p>
+    </div>
+</footer>

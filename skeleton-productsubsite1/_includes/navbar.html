@@ -1,0 +1,39 @@
+<nav class="navbar navbar-inverse navbar-static-top" role="navigation">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                    data-target="#navbar-collapse" aria-expanded="false">
+                <span class="sr-only">{{ site.data.ui-text.navbar.toggle_tip }}</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="{{ site.baseurl }}{% link index.html %}">
+                <img alt="{{ site.title }} | {{ site.productname }}" src="/images/logos/sage_developer_logo.svg" class="subsitelogo" style="display: inline; padding-right: 20px; border-right: #888 1px solid; margin-right: 20px; margin-top: -5px;"><img src="{{ site.product_logopath }}" class="subsiteproductlogo" style="height: 24px; display: inline; margin-top: -5px;">
+            </a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="navbar-collapse">
+
+            {% include navbar-right.html %}
+
+            {% if site.data.ui-text.navbar.search_url == "NONE" %}
+
+            {% else %}
+            <form class="navbar-form navbar-right" role="search" action="{{ site.data.ui-text.navbar.search_url }}" target="_blank" method="get">
+                <div class="input-group">
+                    <input name="q" type="text" class="form-control" placeholder="{{ site.data.ui-text.navbar.search_input_placeholder }}">
+                    <input name="sitesearch" type="hidden" value="{{ '' | append: site.url | remove_first: 'https://' | remove_first: 'http://' }}">
+                    <span class="input-group-btn">
+                        <button type="submit" class="btn btn-success" aria-label="{{ site.data.ui-text.navbar.search_button_label }}">
+                            <span class="glyphicon glyphicon-search"></span>
+                        </button>
+                    </span>
+                </div>
+            </form>
+            {% endif %}
+        </div>
+    </div>
+</nav>

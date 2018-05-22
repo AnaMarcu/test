@@ -1,0 +1,3 @@
+- title: Accounts Payable # TODO change this or delete it
+  baseurl: /api/accounts-payable/
+  description: "Accounts Payable (AP) enables you to keep track of your vendor accounts and bills. Basically, you enter and edit your vendor transactions, and then pay them."

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+    {% include head.html %}
+
+    <body>
+
+    {% include navbar.html %}
+
+    <div class="container-fluid sage-docs-wrapper">
+
+        <div class="col-sm-12" role="main">
+
+            {% include breadcrumb.html %}
+
+            <div class="api-reference-wrapper">
+                <div class="content">
+                    {% include pageheader.html %}
+
+                    {{ content }}
+
+                    {% include feedback.html %}
+
+                </div>
+                <div class="code-box"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+    {% include footer.html %}
+
+    {% include scripts.html %}
+
+    </body>
+
+</html>

@@ -1,0 +1,32 @@
+# These are required by the theme navbar and footer
+# Why are these in a yml file? For localization!
+navbar:
+  toggle_tip: "Toggle navigation"
+  search_url: "https://www.google.com/search"
+  search_input_placeholder: "Search with Google"
+  search_button_label: "Search"
+
+footer:
+  copyright:
+    text: "Copyright &copy;"
+    entity: "Sage Group plc"
+    url: "https://www.sage.com"
+  content_license:
+    prefix: "Page content licensed under"
+    name: "Creative Commons Attribution 4.0"
+    url: "http://creativecommons.org/licenses/by/4.0/"
+  code_license:
+    prefix: "Code samples licensed under"
+    name: "Apache v2.0"
+    url: "http://www.apache.org/licenses/LICENSE-2.0"
+
+
+# TODO The following are unique to sage-intacct so don't copy them or you're going to have a bad time
+navbar-right:
+  blog: "Blog"
+  guides: "Guides"
+  platform-services: "Platform Services"
+  api-ref: "API Reference"
+feedback: # Notice the _includes/feedback.html file uses this
+  text: "Provide feedback"
+  url: "https://docs.google.com/forms/d/e/1FAIpQLSf09LSiijHUZejqnzBSahTkAnhxgcJdr8vvoS6J4EXIvDPkWA/viewform?entry.1920380635=" # TODO change this

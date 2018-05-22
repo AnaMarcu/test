@@ -1,0 +1,30 @@
+{% capture url %}{{ page.url | remove: "/" }}{% endcapture %}
+{% if url.size > 0 %}
+
+<nav class="breadcrumbs {% if page.hide_breadcrumb == true %}hidden{% endif %}">
+
+    <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+
+        {% assign position = 0 %}
+        {% for crumb in breadcrumbs %}
+
+            {% assign caption = crumb.title %}
+            {% assign position = position | plus: 1 %}
+
+            <li {% if crumb.url == page.url %}class="active"{% endif %} property="itemListElement" typeof="ListItem">
+                <a property="item" typeof="WebPage" href="{{ crumb.url | prepend: site.baseurl }}">
+                    {% if position == 1 %}
+                    <span property="name" class="glyphicon glyphicon-home" aria-hidden="true" aria-label="{{ site.title }}"></span>
+                    {% else %}
+                    <span property="name">{{ caption }}</span>
+                    {% endif %}
+                </a>
+                <meta property="position" content="{{ position }}"/>
+            </li>
+        {% endfor %}
+
+    </ol>
+
+</nav>
+
+{% endif %}

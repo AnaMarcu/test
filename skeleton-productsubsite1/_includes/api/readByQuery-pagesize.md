@@ -1,0 +1,1 @@
+Custom page size between `1` and `1000` items (Default: `100`)

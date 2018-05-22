@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+    {% include head.html %}
+
+    <body>
+
+    {% include navbar.html %}
+
+    <div class="{% if page.fluid == true %}container-fluid{% else %}container{% endif %}">
+
+        <div class="col-sm-12" role="main">
+
+            {{ content }}
+
+        </div>
+
+        <div class="row">
+            &nbsp;
+        </div>
+
+    </div>
+
+    {% include footer.html %}
+
+    {% include scripts.html %}
+
+</body>
+
+</html>

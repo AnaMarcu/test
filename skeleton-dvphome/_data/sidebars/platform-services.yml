@@ -1,0 +1,6 @@
+base: /platform-services
+items:
+  - title: Overview
+    url: /
+  - title: AJAX Gateway
+    url: /ajax-gateway/

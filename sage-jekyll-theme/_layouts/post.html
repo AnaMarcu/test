@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+{% include head.html %}
+
+<body>
+
+{% include navbar.html %}
+
+<div class="container">
+
+    <div class="col-sm-12" role="main">
+        {% include breadcrumb.html %}
+
+        <article itemscope itemtype="http://schema.org/BlogPosting">
+
+            <header>
+                <div class="page-header">
+                    <h1 itemprop="name headline">
+                        {% if page.header %}
+                        {{ page.header }}
+                        {% else %}
+                        {{ page.title }}
+                        {% endif %}
+                        <small>
+                            by <span itemprop="author" itemscope itemtype="http://schema.org/Organization"><span itemprop="name">{{ site.author }}</span></span> on <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%Y-%m-%d" }}</time>
+                        </small>
+                    </h1>
+                </div>
+            </header>
+
+            <div itemprop="articleBody">
+                {{ content }}
+            </div>
+
+        </article>
+
+        {% include feedback.html %}
+
+    </div>
+
+    <div class="row">
+        &nbsp;
+    </div>
+
+</div>
+
+{% include footer.html %}
+
+{% include scripts.html %}
+
+</body>
+
+</html>

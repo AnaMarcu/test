@@ -1,0 +1,33 @@
+---
+title: Sage Developer | {{ site.productname }} | Latest Updates
+layout: home
+hide_header: true
+---
+
+{% for post in paginator.posts %}
+
+<div class="page-header">
+    <h1><a href="{{ post.url | prepend:site.baseurl }}">{% if post.header %}{{ post.header }}{% else %}{{ post.title }}{% endif %}</a>
+        <small>by {{ site.author }} on {{ post.date | date: "%Y-%m-%d" }}</small>
+    </h1>
+</div>
+
+{{ post.content }}
+
+<hr>
+{% endfor %}
+
+<nav aria-label="Page navigation">
+    <ul class="pager">
+        <li class="previous {% if paginator.next_page %}{% else %}disabled{% endif %}">
+            <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}" aria-label="Older">
+                <span aria-hidden="true">&larr;</span> Older
+            </a>
+        </li>
+        <li class="next {% if paginator.previous_page %}{% else %}disabled{% endif %}">
+            <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}" aria-label="Newer">
+                Newer <span aria-hidden="true">&rarr;</span>
+            </a>
+        </li>
+    </ul>
+</nav>

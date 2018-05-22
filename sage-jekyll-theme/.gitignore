@@ -1,0 +1,15 @@
+*.gem
+.bundle
+.sass-cache
+_site
+Gemfile.lock
+.idea
+_config.yml
+_data
+
+404.html
+feedback.html
+navbar-right.html
+index.html
+root-index.html
+test

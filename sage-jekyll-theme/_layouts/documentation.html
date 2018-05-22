@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+    {% include head.html %}
+
+    <body>
+
+    {% include navbar.html %}
+
+    <div class="container-fluid sage-docs-wrapper">
+
+        {% if site.data.sidebars[page.sidebar].items.size < 2 or page.hide_sidebar == true %}
+
+            <div class="col-sm-12" role="main">
+                {% include breadcrumb.html %}
+
+                {% include pageheader.html %}
+
+                {{ content }}
+
+                {% include feedback.html %}
+
+            </div>
+
+        {% else %}
+
+            {% include sidebar.html %}
+
+            <div class="col-sm-9 col-sm-pull-3 col-xs-12" role="main">
+                {% include breadcrumb.html %}
+
+                {% include pageheader.html %}
+
+                {{ content }}
+
+                {% include feedback.html %}
+
+            </div>
+
+        {% endif %}
+
+    </div>
+
+    {% include footer.html %}
+
+    {% include scripts.html %}
+
+    </body>
+
+</html>

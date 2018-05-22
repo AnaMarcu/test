@@ -1,0 +1,21 @@
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    {% if page.url == '/' %}
+        <title>{{ site.title }}</title>
+        {% if site.bing_site_auth != blank %}
+        <meta name="msvalidate.01" content="{{ site.bing_site_auth }}" />
+        {% endif %}
+    {% else %}
+        <title>{{ page.title }} | {{ site.title }}</title>
+    {% endif %}
+
+    {% I18n_Headers %}
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700">
+    <link rel="stylesheet" href="{{ '/assets/css/site.css' | prepend: site.baseurl }}">
+    <link rel="stylesheet" href="{{ '/assets/css/github.css' | prepend: site.baseurl }}">
+    <link rel="icon" href="{{ '/assets/favicon.ico' | prepend: site.baseurl }}">
+</head>

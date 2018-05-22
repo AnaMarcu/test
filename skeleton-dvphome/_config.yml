@@ -1,0 +1,97 @@
+# Conversion
+markdown: kramdown
+highlighter: rouge
+encoding: utf-8
+
+# Markdown options
+kramdown:
+  input: GFM
+  hard_wrap: false
+  syntax_highlighter: rouge
+  toc_levels: 1..2
+
+# Sass options
+sass:
+  sass_dir: _sass
+  style: compressed
+
+# Serving
+baseurl: "" # does not include hostname
+theme: sage-jekyll-theme
+
+# Site settings
+title: Sage Developer
+author: Sage
+url: "https://developer.sage.com" # the base hostname & protocol for the site
+# logo: /assets/images/sage_logo_green.svg
+logo: /images/logos/sage_developer_logo.svg
+logo_width: 155
+logo_height: 24
+accounting_url: "http://localhost:4000"
+
+# Google Analytics
+google_analytics_id: "changeme" # TODO
+
+# Bing Webmaster Tools
+bing_site_auth: "changeme" # TODO
+
+# Yummy gems
+plugins:
+  - jekyll-paginate
+  - jekyll-sitemap
+  - jekyll-polyglot
+
+# Files to exclude from the site build
+exclude:
+  - build_site.*
+  - Gemfile*
+  - LICENSE
+  - README.md
+
+# Multi language plugin settings
+# https://github.com/untra/polyglot
+languages: ["en"]
+default_lang: "en"
+exclude_from_localization: ["assets", "images"]
+parallel_localization: false # true does not work on Windows
+
+# Paginate settings
+paginate: 5
+paginate_path: "/blog/page:num/"
+
+# Post settings
+future: true
+
+# Defaults get applied to pages with the following, so you don't have to put it in each page's yml front matter
+defaults:
+  -
+    scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+  -
+    scope:
+      path: ""
+      type: api
+    values:
+      layout: api-reference
+  - # TODO change this to your own guide
+    scope:
+      path: ""
+      type: platform-services-guide
+    values:
+      layout: documentation
+      sidebar: platform-services
+      image_base: /images/platform-services
+
+# Collections to generate
+collections:
+  posts:
+    permalink: /blog/:year/:month/:title.html
+  api:
+    output: true
+    permalink: /:collection/:path/
+  platform-services-guide: # TODO change this to your own guide
+    output: true
+    permalink: /platform-services/:path/

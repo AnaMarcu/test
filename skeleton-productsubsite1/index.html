@@ -1,0 +1,73 @@
+---
+layout: home
+hide_header: true
+hide_breadcrumb: true
+---
+
+<div id="row" class="banner gettingstarted" >
+	<h1 class="sagename" >Start developing for {{ site.product_name }}</h1>
+	<p class="sagebutton sageaccessiblegreen" ><a class="sagebuttonlink" href="{{ site.baseurl }}/gettingstarted.html">Getting started guide</a> <a class="sagebutton sagewhite" href="{{ site.baseurl }}/#">Get your free API key</a></p>
+</div>
+
+<h2>Integrating with {{ site.product_name }}</h2>
+
+<div class="row">
+    <div class="col-sm-6 col-md-4">
+        <div class="thumbnail">
+            <!--<img src="..." alt="...">-->
+            <div class="caption">
+                <a href="{{ site.baseurl }}{% link api/index.md %}"><h3>API Reference</h3></a>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-6 col-md-4">
+        <div class="thumbnail">
+            <div class="caption">
+                <a href="{{ site.baseurl }}/web-services/index.html"><h3>Web Services</h3></a>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-6 col-md-4">
+        <div class="thumbnail">
+            <div class="caption">
+                <a href="{{ site.baseurl }}/platform-services/index.html"><h3>Platform Services</h3></a>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-6 col-md-4">
+        <div class="thumbnail">
+            <div class="caption">
+                <a href="{{ site.baseurl }}/data-delivery-services/index.html"><h3>Data Delivery Service</h3></a>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-6 col-md-4">
+        <div class="thumbnail">
+            <div class="caption">
+                <a href="{{ site.baseurl }}/customization-services/index.html"><h3>Customization Services</h3></a>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-6 col-md-4">
+        <div class="thumbnail">
+            <div class="caption">
+                <a href="{{ site.baseurl }}/tools/index.html"><h3>Tools &amp; Libraries</h3></a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<h2>Latest updates</h2>
+
+<ul class="list-group">
+    {% for post in site.posts %}
+    <li class="list-group-item">
+        <span class="badge">{{ post.date | date: "%Y-%m-%d" }}</span>
+        <h4 class="list-group-item-heading">
+            <a href="{{ post.url | prepend:site.baseurl }}">{% if post.header %}{{ post.header }}{% else %}{{ post.title }}{% endif %}</a>
+        </h4>
+        <p class="list-group-item-text">{{ post.excerpt }}</p>
+    </li>
+    {% endfor %}
+</ul>

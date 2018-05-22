@@ -1,0 +1,10 @@
+<create_vendor>
+    <vendorid>V1234</vendorid>
+    <name>SaaS Company Inc</name>
+    <contactinfo>
+        <contact>
+            <contactname>SaaS Company Inc(VV1234)</contactname>
+            <printas>SaaS Company Inc</printas>
+        </contact>
+    </contactinfo>
+</create_vendor>

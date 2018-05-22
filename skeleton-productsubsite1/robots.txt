@@ -1,0 +1,8 @@
+---
+layout: null
+---
+User-agent: *
+Disallow: /404.html
+
+Host: {{ "" | append: site.url | remove_first: "https://" | remove_first: "http://" }}
+Sitemap: {{ "/sitemap.xml" | prepend: site.baseurl | prepend: site.url }}

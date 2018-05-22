@@ -1,0 +1,139 @@
+---
+---
+
+@import "variables";
+@import "bootstrap";
+@import "bootswatch";
+
+.sage-docs-wrapper {
+  table {
+    @extend .table, .table-striped, .table-bordered;
+  }
+}
+
+// Thanks to github.com/lord/slate for the split idea
+@media (min-width: 960px) {
+  .api-reference-wrapper {
+    .content {
+      position: relative;
+      z-index: 30;
+
+      &>h1, &>h2, &>hr {
+        clear:both;
+      }
+
+      .page-header, h1, h2, h3, h4, h5, h6, >p, ul, ol, aside, dl, hr {
+        margin-right: 50%;
+        padding-right: 15px;
+      }
+      table {
+        width: calc(50% - 15px) !important;
+      }
+      .highlight, blockquote {
+        width: calc(50% - 15px);
+        float: right;
+        clear: right;
+      }
+      blockquote {
+        margin-bottom: 15px;
+        margin-top: 15px;
+      }
+    }
+
+    .code-box {
+      z-index: 0;
+      width: 50%;
+      background-color: #fafafa;
+      position: absolute;
+      right: 0;
+      top: 0;
+      bottom: 0;
+    }
+  }
+}
+
+// Hide the code box if the screen is under a certain size
+@media (max-width: 960px) {
+  .api-reference-wrapper {
+    .code-box {
+      display: none;
+    }
+  }
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 90px;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 90px;
+  background-color: #fafafa;
+  color: #767676;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+.container-fluid .text-left {
+  margin: 20px 0;
+}
+
+.footer > .container-fluid {
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+/* New styles from Stewart Collins' main landing page*/
+.landing-page .row {
+  margin: 10px 0 30px 0;
+}
+.landing-page .thumbnail {
+  padding: 10px;
+}
+
+.landing-page .thumbnail>img {
+  margin: 15px 0 0 10px;
+}
+
+.landing-page .caption .btn {
+  margin: 0 10px 15px 0;
+}
+
+.landing-page .caption .secondary {
+  color: #767A83;
+  font-size: 13px;
+  min-height: auto;
+  margin: 0;
+}
+
+@media (min-width: 768px) { 
+  .landing-page .thumbnail {
+      min-height: 310px;  
+    }
+
+  .landing-page .caption p {
+    min-height: 75px;
+  }
+}
+
+@media (min-width: 1025px) { 
+  .landing-page .thumbnail {
+      min-height: 360px;
+    }
+}
+
+@media (min-width: 1200px) { 
+  .landing-page .thumbnail {
+      min-height: 255px;  
+    }
+}
+
